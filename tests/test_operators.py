@@ -121,6 +121,7 @@ def test_transitive(a: float, b: float, c: float) -> None:
     if lt(a, b) and lt(b, c):
         assert lt(a, c)
 
+
 @pytest.mark.task0_2
 @given(small_floats, small_floats)
 def test_symmetric(a: float, b: float) -> None:
@@ -130,6 +131,7 @@ def test_symmetric(a: float, b: float) -> None:
     """
     assert mul(a, b) == mul(b, a)
 
+
 @pytest.mark.task0_2
 @given(small_floats, small_floats, small_floats)
 def test_distribute(x: float, y: float, z: float) -> None:
@@ -138,6 +140,7 @@ def test_distribute(x: float, y: float, z: float) -> None:
     :math:`z \times (x + y) = z \times x + z \times y`
     """
     assert_close(mul(z, add(x, y)), add(mul(z, x), mul(z, y)))
+
 
 # @pytest.mark.task0_2
 # def test_other() -> None:

@@ -72,9 +72,9 @@ def sigmoid(x: float) -> float:
     for stability.
     """
     if x >= 0:
-        res =  1/(1 + math.exp(-x))
+        res = 1 / (1 + math.exp(-x))
     else:
-        res = math.exp(x)/(1 + math.exp(x))
+        res = math.exp(x) / (1 + math.exp(x))
     return res
 
 
@@ -104,19 +104,19 @@ def log_back(x: float, d: float) -> float:
     r"If $f = log$ as above, compute $d \times f'(x)$"
     # # TODO: Implement for Task 0.1.
     # raise NotImplementedError("Need to implement for Task 0.1")
-    return d/x
+    return d / x
 
 
 def inv(x: float) -> float:
     "$f(x) = 1/x$"
-    return 1/x
+    return 1 / x
 
 
 def inv_back(x: float, d: float) -> float:
     r"If $f(x) = 1/x$ compute $d \times f'(x)$"
     # # TODO: Implement for Task 0.1.
     # raise NotImplementedError("Need to implement for Task 0.1")
-    return -d*x**(-2)
+    return -d * x ** (-2)
 
 
 def relu_back(x: float, d: float) -> float:
@@ -155,7 +155,7 @@ def negList(ls: Iterable[float]) -> Iterable[float]:
 
 
 def zipWith(
-    fn: Callable[[float, float], float]
+    fn: Callable[[float, float], float],
 ) -> Callable[[Iterable[float], Iterable[float]], Iterable[float]]:
     """
     Higher-order zipwith (or map2).
